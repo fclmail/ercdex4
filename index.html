@@ -319,8 +319,8 @@ const usdcAddr = tokens.USDC.address;
 const usdc = new ethers.Contract(usdcAddr, ["function balanceOf(address) view returns (uint256)", "function decimals() view returns (uint8)"], provider);
 const decimals = await usdc.decimals();
 const [balance, contractBal] = await Promise.all([usdc.balanceOf(walletAddress), usdc.balanceOf(contractAddress)]);
-document.getElementById("walletBalance").textContent = Number(ethers.utils.formatUnits(balance, decimals)).toFixed(2);
-document.getElementById("contractBalance").textContent = Number(ethers.utils.formatUnits(contractBal, decimals)).toFixed(2);
+document.getElementById("walletBalance").textContent = Number(ethers.utils.formatUnits(balance, decimals)).toFixed(6);
+document.getElementById("contractBalance").textContent = Number(ethers.utils.formatUnits(contractBal, decimals)).toFixed(6);
 } catch (error) { log(`⚠️ Balance update failed: ${error.message}`); }
 }
 
