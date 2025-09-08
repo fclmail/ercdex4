@@ -455,7 +455,7 @@ const contractUSDCAfter = await getContractUSDCBalance();
 const profit = contractUSDCAfter - contractUSDCBefore;
 
 if (!document.getElementById("positiveBalanceToggle").checked || profit > 0) {
-if (profit > 0) { accumulatedProfit += profit; document.getElementById("accumulatedProfit").textContent = accumulatedProfit.toFixed(2); }
+if (profit > 0) { accumulatedProfit += profit; document.getElementById("accumulatedProfit").textContent = accumulatedProfit.toFixed(6); }
 }
 
 if (!document.getElementById("accumulateToggle").checked) { await withdrawUSDC(); }
